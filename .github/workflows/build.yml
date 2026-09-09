@@ -8,6 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: GPSCameraApp
     steps:
       - name: Checkout kode
         uses: actions/checkout@v4
@@ -30,4 +33,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: KameraGPS-debug-apk
-          path: app/build/outputs/apk/debug/*.apk
+          path: GPSCameraApp/app/build/outputs/apk/debug/*.apk
